@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetScan.Views.ScanPage"
+             Title="Сканирование">
+    <!--
+      Страница сканирования использует две вертикальные области: верхняя
+      отображает заголовок и результаты сканирования, а нижняя содержит
+      кнопки управления и информационный текст. Результаты помещаются
+      в ScrollView внутри StackLayout с именем "list".
+    -->
+    <StackLayout>
+        <!--Область заголовка и списка обнаруженных устройств-->
+        <StackLayout Margin="20" VerticalOptions="StartAndExpand" Orientation="Vertical">
+            <!--Подсеть, которая сканируется-->
+            <Label x:Name="title" FontSize="15" />
+            <!--Прокручиваемая область для фреймов устройств-->
+            <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout x:Name="list" />
+            </ScrollView>
+        </StackLayout>
+        <!--Область кнопок и информационного текста-->
+        <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" Margin="0,0,0,30">
+            <!--StackLayout для размещения кнопок; создаём кнопку
+                сохранения динамически в коде-->
+            <StackLayout x:Name="buttons" Orientation="Horizontal" HorizontalOptions="Center" Spacing="50">
+                <Button x:Name="scan" Text="Сканировать" Padding="25,15" CornerRadius="50" Clicked="Button_Scan"/>
+            </StackLayout>
+            <!--Сообщение пользователю перед сканированием-->
+            <Label x:Name="info" Text="Перед сканированием убедитесь, что у вас есть подключение к сети!" FontSize="14" HorizontalTextAlignment="Center" Margin="40,0" HorizontalOptions="Center"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

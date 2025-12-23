@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>NetScan</RootNamespace>
+  </PropertyGroup>
+
+  <!--Зависимости, необходимые для работы Xamarin.Forms и SQLite-->
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.8" />
+    <PackageReference Include="SQLite-net-pcl" Version="1.8.116" />
+  </ItemGroup>
+
+  <!--Подключаем XAML-файлы как ресурсы-->
+  <!--<ItemGroup>
+    <EmbeddedResource Include="Views\ScanPage.xaml" />
+    <EmbeddedResource Include="Views\HistoryPage.xaml" />
+    <EmbeddedResource Include="AppShell.xaml" />
+    <EmbeddedResource Include="App.xaml" />
+  </ItemGroup>-->
+
+</Project>

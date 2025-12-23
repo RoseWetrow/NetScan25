@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\NetScan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\views\\scanpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\views\\scanpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\views\\historypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\views\\historypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\app.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\app.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\views\\scanpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\views\\scanpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\appshell.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\appshell.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|d:\\netscan\\netscan\\netscan\\views\\historypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{EE4FDF14-4D4C-4467-89B3-F3F385794487}|NetScan\\NetScan\\NetScan.csproj|solutionrelative:netscan\\netscan\\views\\historypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CDCFD5E-32E5-4506-A7EF-4867E25EBADF}|NetScan\\NetScan.Android\\NetScan.Android.csproj|D:\\NetScan\\netscan\\netscan.android\\properties\\androidmanifest.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}",
+      "RelativeMoniker": "D:0:0:{9CDCFD5E-32E5-4506-A7EF-4867E25EBADF}|NetScan\\NetScan.Android\\NetScan.Android.csproj|solutionrelative:netscan\\netscan.android\\properties\\androidmanifest.xml||{6B79B2C4-8503-4A04-8248-ADCEF2B49CB1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\AppShell.xaml.cs",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\AppShell.xaml.cs",
+              "RelativeToolTip": "NetScan\\NetScan\\AppShell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T13:03:38.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\App.xaml.cs",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\App.xaml.cs",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\App.xaml.cs",
+              "RelativeToolTip": "NetScan\\NetScan\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T13:02:49.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\AssemblyInfo.cs",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\AssemblyInfo.cs",
+              "RelativeToolTip": "NetScan\\NetScan\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T13:02:40.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\App.xaml",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\App.xaml",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\App.xaml",
+              "RelativeToolTip": "NetScan\\NetScan\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-10T13:02:38.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistoryPage.xaml.cs",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\Views\\HistoryPage.xaml.cs",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\Views\\HistoryPage.xaml.cs",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\Views\\HistoryPage.xaml.cs",
+              "RelativeToolTip": "NetScan\\NetScan\\Views\\HistoryPage.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:50:10.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\AppShell.xaml",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\AppShell.xaml",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\AppShell.xaml",
+              "RelativeToolTip": "NetScan\\NetScan\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-09T18:42:54.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScanPage.xaml",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\Views\\ScanPage.xaml",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\Views\\ScanPage.xaml",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\Views\\ScanPage.xaml",
+              "RelativeToolTip": "NetScan\\NetScan\\Views\\ScanPage.xaml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAtwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-09T18:38:18.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScanPage.xaml.cs",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\Views\\ScanPage.xaml.cs",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\Views\\ScanPage.xaml.cs",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\Views\\ScanPage.xaml.cs",
+              "RelativeToolTip": "NetScan\\NetScan\\Views\\ScanPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T18:38:20.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HistoryPage.xaml",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan\\Views\\HistoryPage.xaml",
+              "RelativeDocumentMoniker": "NetScan\\NetScan\\Views\\HistoryPage.xaml",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan\\Views\\HistoryPage.xaml",
+              "RelativeToolTip": "NetScan\\NetScan\\Views\\HistoryPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-09T18:38:13.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "D:\\NetScan\\NetScan\\NetScan.Android\\Properties\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "NetScan\\NetScan.Android\\Properties\\AndroidManifest.xml",
+              "ToolTip": "D:\\NetScan\\NetScan\\NetScan.Android\\Properties\\AndroidManifest.xml",
+              "RelativeToolTip": "NetScan\\NetScan.Android\\Properties\\AndroidManifest.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-09T20:36:08.961Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

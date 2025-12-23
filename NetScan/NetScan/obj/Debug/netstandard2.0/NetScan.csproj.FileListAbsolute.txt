@@ -1,0 +1,47 @@
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.deps.json
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.dll
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.pdb
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.AssemblyReference.cache
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfoInputs.cache
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfo.cs
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.CoreCompileInputs.cache
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.dll
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\refint\NetScan.dll
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.pdb
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\ref\NetScan.dll
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\ScanPage.xaml.g.cs
+C:\Users\lagan\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.deps.json
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.dll
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.pdb
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.AssemblyReference.cache
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\ScanPage.xaml.g.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfoInputs.cache
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfo.cs
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.CoreCompileInputs.cache
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.dll
+C:\Users\yrikk\OneDrive\Рабочий стол\NetScan\NetScan\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.pdb
+D:\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.deps.json
+D:\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.dll
+D:\NetScan\NetScan\NetScan\bin\Debug\netstandard2.0\NetScan.pdb
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.AssemblyReference.cache
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.GeneratedMSBuildEditorConfig.editorconfig
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\Views\ScanPage.xaml.g.cs
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfoInputs.cache
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.AssemblyInfo.cs
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.csproj.CoreCompileInputs.cache
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\XamlC.stamp
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.dll
+D:\NetScan\NetScan\NetScan\obj\Debug\netstandard2.0\NetScan.pdb

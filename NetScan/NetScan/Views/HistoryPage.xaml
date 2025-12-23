@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetScan.Views.HistoryPage"
+             Title="История">
+    <!--
+      Страница истории отображает список сохранённых устройств. Для вывода
+      используется ListView с нестандартной высотой строк. В конце страницы
+      расположена кнопка очистки истории и пояснительный текст.
+    -->
+    <StackLayout>
+        <!--Список элементов истории-->
+        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">
+            <ListView x:Name="listView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="3">
+                                <StackLayout>
+                                    <Label Text="{Binding hostname}"
+                                           FontSize="14"
+                                           FontAttributes="Bold" />
+                                    <Label Text="{Binding ip}"
+                                           FontSize="12" />
+                                    <Label Text="{Binding scanTime}"
+                                           FontSize="Micro" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Кнопка очистки истории и информационный текст-->
+        <StackLayout x:Name="buttons" VerticalOptions="EndAndExpand" Margin="0,0,0,30">
+            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50"
+                    HorizontalOptions="CenterAndExpand" Clicked="Button_Clear" />
+            <Label x:Name="info" Text="Здесь хранится история сканирований"
+                   FontSize="14" HorizontalTextAlignment="Center"
+                   Margin="40,0" HorizontalOptions="Center" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
