@@ -9,12 +9,10 @@ using Xamarin.Forms.Xaml;
 
 namespace NetScan.Views
 {
-    /// <summary>
     /// Страница сканирования локальной сети. После нажатия на кнопку «Сканировать»
     /// определяется подсеть текущего интерфейса, происходит обход адресов
     /// от 1 до 254, для каждого IP осуществляется DNS‑разрешение и пинг. Устройства
     /// отображаются на экране в виде фреймов и могут быть сохранены в SQLite‑базу.
-    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanPage : ContentPage
     {
@@ -30,7 +28,7 @@ namespace NetScan.Views
         // повторно, чтобы не добавлять несколько кнопок в интерфейс.
         private Xamarin.Forms.Button save;
 
-=// Признак существования таблицы Device в базе. Таблица создаётся один
+        // Признак существования таблицы Device в базе. Таблица создаётся один
         // раз при первом открытии страницы.
         private bool tableExist = false;
 
@@ -39,10 +37,9 @@ namespace NetScan.Views
             InitializeComponent();
         }
 
-        /// <summary>
+
         /// Вызывается при отображении страницы. Создаёт таблицу для хранения
         /// устройств при первом открытии.
-        /// </summary>
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -53,11 +50,10 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Обработчик нажатия на кнопку «Сканировать». Сбрасывает интерфейс,
         /// подготавливает список устройств и запускает сканирование. Если кнопка
         /// сохранения ещё не создана – создаёт её и добавляет в контейнер.
-        /// </summary>
         private void Button_Scan(object sender, EventArgs e)
         {
             Console.WriteLine("Сработал обработчик Button_Scan !");
@@ -96,11 +92,9 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Обработчик кнопки сохранения. Останавливает сканирование, перебирает
-        /// обнаруженные устройства и заносит каждое в базу. После записи список
-        /// очищается.
-        /// </summary>
+        /// обнаруженные устройства и заносит каждое в базу. После записи список очищается.
         private void Button_Save(object sender, EventArgs e)
         {
             Console.WriteLine("Сработал обработчик Button_Save !");
@@ -120,10 +114,9 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Получает подсеть локального IP‑адреса и запускает сканирование. Метод
         /// исключает loopback (127.0.0) и выводит сетевой префикс на экран.
-        /// </summary>
         private void GetLocalIP()
         {
             var interfaces = NetworkInterface.GetAllNetworkInterfaces();
@@ -152,11 +145,10 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Асинхронно перебирает все возможные адреса в указанной подсети (x.x.x.1–254),
         /// определяет имя хоста через DNS и отправляет IP в метод PingIP().
         /// Сканирование прекращается, если флаг isScanning становится false.
-        /// </summary>
         private async void Scan(string subnet)
         {
             Console.WriteLine("Запущен метод Scan();");
@@ -185,10 +177,9 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Асинхронно отправляет ping по указанному адресу. Если устройство отвечает
         /// за время таймаута, выводит его на экран через Print().
-        /// </summary>
         private async void PingIP(string hostname, string ipAddress)
         {
             var ping = new Ping();
@@ -200,11 +191,10 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Создаёт визуальный фрейм для обнаруженного устройства и добавляет его
         /// в StackLayout. Записывает устройство во временный список для дальнейшего
         /// сохранения.
-        /// </summary>
         private void Print(string hostname, string ipAddress)
         {
             if (!isScanning)
@@ -284,11 +274,10 @@ namespace NetScan.Views
             deviceList.Add(device);
         }
 
-        /// <summary>
+
         /// Отображает всплывающее окно с информацией об устройстве. Для
         /// упрощения всегда предполагается, что устройство активно, так как
         /// вызывается из успешного ответа ping.
-        /// </summary>
         public async void Info(string hostname, string ipAddress)
         {
             string info = (hostname != "Unknown" ? $"Устройство : {hostname}" : "Неудалось получить название устройства") +
@@ -298,10 +287,9 @@ namespace NetScan.Views
 
         #region БД и её методы
 
-        /// <summary>
+
         /// Класс модели данных для таблицы Device. Хранит идентификатор,
         /// название устройства, IP‑адрес и время сканирования.
-        /// </summary>
         public class Device
         {
             [PrimaryKey, AutoIncrement]
@@ -311,10 +299,9 @@ namespace NetScan.Views
             public DateTime scanTime { get; set; }
         }
 
-        /// <summary>
+
         /// Метод подключения к базе данных. Создаёт файл netscan.db3 в
         /// папке Personal, если его ещё нет, и возвращает соединение.
-        /// </summary>
         public static SQLiteConnection GetConnection()
         {
             string dbPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "netscan.db3");
@@ -322,9 +309,8 @@ namespace NetScan.Views
             return connection;
         }
 
-        /// <summary>
+
         /// Создаёт таблицу Device в БД, если она ещё не существует.
-        /// </summary>
         public void CreateTable()
         {
             using (SQLiteConnection connection = GetConnection())
@@ -333,10 +319,9 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Добавляет устройство в БД, заполняя время сканирования. Таблица
         /// создаётся при необходимости.
-        /// </summary>
         public void AddDevice(Device info)
         {
             using (SQLiteConnection connection = GetConnection())
@@ -353,10 +338,9 @@ namespace NetScan.Views
             }
         }
 
-        /// <summary>
+
         /// Полностью очищает историю, удаляя таблицу Device и создавая её заново.
         /// Статический метод необходим для вызова из других классов.
-        /// </summary>
         public static void DeleteAllHistory()
         {
             using (SQLiteConnection connection = GetConnection())
@@ -365,7 +349,6 @@ namespace NetScan.Views
                 connection.CreateTable<Device>();
             }
         }
-
         #endregion
     }
 }

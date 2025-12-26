@@ -3,9 +3,7 @@ using Xamarin.Forms.Xaml;
 
 namespace NetScan
 {
-    /// <summary>
     /// Класс приложения инициализирует главный интерфейс — оболочку AppShell.
-    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
