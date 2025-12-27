@@ -23,7 +23,7 @@ namespace NetScan.ViewModels
         public ObservableCollection<Models.Device> Devices { get; } = new ObservableCollection<Models.Device>(); // при изменении (Add/Clear) поднимает событие CollectionChanged, на которое CollectionView подписан через Binding Devices и обновляет UI (реализует INotifyCollectionChanged)
         public ICommand ScanCommand { get; }
         public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public ICommand StopCommand { get; }
 
         private string subnetText;
         public string SubnetText
@@ -42,7 +42,7 @@ namespace NetScan.ViewModels
 
             ScanCommand = new Command(async () => await StartScanAsync());
             SaveCommand = new Command(Save);
-            CancelCommand = new Command(Cancel);
+            StopCommand = new Command(Cancel);
         }
 
         private string GetLocalSubnet()
@@ -68,7 +68,7 @@ namespace NetScan.ViewModels
         public async Task StartScanAsync()
         {
             Devices.Clear();
-            IsBusy = true;                                // показать Отменить
+            IsBusy = true;                                // показать Стоп
             OnPropertyChanged(nameof(ShowSave));          // скрыть Сохранить
             OnPropertyChanged(nameof(EnabledSave));       // Сохранить неактивна
             cts = new CancellationTokenSource();
@@ -92,7 +92,7 @@ namespace NetScan.ViewModels
             finally
             {
                 IsBusy = false;
-                OnPropertyChanged(nameof(ShowSave));      // кнопки возвращаются в исходное состояние (показываем Сохранить, убираем Отменить)
+                OnPropertyChanged(nameof(ShowSave));      // кнопки возвращаются в исходное состояние (показываем Сохранить, убираем Стоп)
                 OnPropertyChanged(nameof(EnabledSave));
             }
         }
