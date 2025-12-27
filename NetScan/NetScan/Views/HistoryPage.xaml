@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NetScan.Views.HistoryPage"
-             Title="История">
-    <!-- Страница истории отображает список сохранённых устройств. -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NetScan.Views.HistoryPage" Title="История">
+
     <StackLayout>
-        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">
-            <!-- Список элементов истории -->
-            <Label x:Name="info" Text="Здесь хранится история сканирований" FontSize="14" Margin="0,30" HorizontalTextAlignment="Center" HorizontalOptions="Center" IsVisible="{Binding EmptyHistory}"/>
-            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding History}" SeparatorVisibility="Default" SelectionMode="None">
+        <StackLayout Margin="30,20,30,30" VerticalOptions="StartAndExpand" Orientation="Vertical">
+            <Label x:Name="info" Text="Здесь хранится история сканирований" FontSize="14" Margin="0,20" HorizontalTextAlignment="Center" HorizontalOptions="Center" IsVisible="{Binding EmptyHistory}"/>
+            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding History}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" SeparatorVisibility="Default" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -24,8 +20,13 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <StackLayout x:Name="buttons" VerticalOptions="EndAndExpand" Margin="0,0,0,30">     <!-- Кнопка очистки истории и информационный текст -->
-            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50" HorizontalOptions="CenterAndExpand" Command="{Binding ClearCommand}" IsVisible="{Binding FilledHistory}"/>
+        <StackLayout x:Name="buttons" Orientation="Vertical" VerticalOptions="EndAndExpand" Margin="0,0,0,30">     <!-- Кнопка очистки истории и информационный текст -->
+            <Grid HorizontalOptions="Center" ColumnSpacing="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="clear" Text="Очистить" CornerRadius="50" Command="{Binding ClearCommand}" IsVisible="{Binding FilledHistory}" WidthRequest="140" HeightRequest="90"/>
+            </Grid>
         </StackLayout>
     </StackLayout>
 </ContentPage>
