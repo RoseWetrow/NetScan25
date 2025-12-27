@@ -5,7 +5,9 @@
              Title="История">
     <!-- Страница истории отображает список сохранённых устройств. -->
     <StackLayout>
-        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">      <!-- Список элементов истории -->
+        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">
+            <!-- Список элементов истории -->
+            <Label x:Name="info" Text="Здесь хранится история сканирований" FontSize="14" Margin="0,30" HorizontalTextAlignment="Center" HorizontalOptions="Center" IsVisible="{Binding EmptyHistory}"/>
             <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding History}" SeparatorVisibility="Default" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -22,10 +24,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-
         <StackLayout x:Name="buttons" VerticalOptions="EndAndExpand" Margin="0,0,0,30">     <!-- Кнопка очистки истории и информационный текст -->
-            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50" HorizontalOptions="CenterAndExpand" Command="{Binding ClearCommand}"/>
-            <Label x:Name="info" Text="Здесь хранится история сканирований" FontSize="14" HorizontalTextAlignment="Center" Margin="40,0" HorizontalOptions="Center"/>
+            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50" HorizontalOptions="CenterAndExpand" Command="{Binding ClearCommand}" IsVisible="{Binding FilledHistory}"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

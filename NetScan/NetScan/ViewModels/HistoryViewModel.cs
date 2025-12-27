@@ -17,6 +17,8 @@ namespace NetScan.ViewModels
 
         public ICommand RefreshCommand { get; }
         public ICommand ClearCommand { get; }
+        public bool EmptyHistory => History.Count == 0;
+        public bool FilledHistory => History.Count > 0;
 
         public HistoryViewModel(IDatabaseService databaseService)
         {
@@ -36,6 +38,9 @@ namespace NetScan.ViewModels
             var list = db.GetDevices();
             foreach (var d in list)
                 History.Add(d);
+
+            OnPropertyChanged(nameof(FilledHistory));  /// показываем Очистить
+            OnPropertyChanged(nameof(EmptyHistory));   /// информационная надпись пропадает
         }
 
         /// Обработчик кнопки Очистить, вызывает метод для удаления всех записей и обновляет список.
@@ -43,6 +48,8 @@ namespace NetScan.ViewModels
         {
             db.DeleteAllDevices();
             History.Clear();
+            OnPropertyChanged(nameof(EmptyHistory));   /// возвращаем информационную надпись и убираем Очистить
+            OnPropertyChanged(nameof(FilledHistory));
         }
     }
 }
