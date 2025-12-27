@@ -9,21 +9,16 @@
       расположена кнопка очистки истории и пояснительный текст.
     -->
     <StackLayout>
-        <!--Список элементов истории-->
-        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">
-            <ListView x:Name="listView" HasUnevenRows="True">
+        <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">      <!-- Список элементов истории -->
+            <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding History}" SeparatorVisibility="Default" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame Margin="3">
                                 <StackLayout>
-                                    <Label Text="{Binding hostname}"
-                                           FontSize="14"
-                                           FontAttributes="Bold" />
-                                    <Label Text="{Binding ip}"
-                                           FontSize="12" />
-                                    <Label Text="{Binding scanTime}"
-                                           FontSize="Micro" />
+                                    <Label Text="{Binding Hostname}" FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Ip}" FontSize="12"/>
+                                    <Label Text="{Binding ScanTime}" FontSize="Micro"/>
                                 </StackLayout>
                             </Frame>
                         </ViewCell>
@@ -31,13 +26,10 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        <!--Кнопка очистки истории и информационный текст-->
-        <StackLayout x:Name="buttons" VerticalOptions="EndAndExpand" Margin="0,0,0,30">
-            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50"
-                    HorizontalOptions="CenterAndExpand" Clicked="Button_Clear" />
-            <Label x:Name="info" Text="Здесь хранится история сканирований"
-                   FontSize="14" HorizontalTextAlignment="Center"
-                   Margin="40,0" HorizontalOptions="Center" />
+
+        <StackLayout x:Name="buttons" VerticalOptions="EndAndExpand" Margin="0,0,0,30">     <!-- Кнопка очистки истории и информационный текст -->
+            <Button x:Name="clear" Text="Очистить" Padding="25,15" CornerRadius="50" HorizontalOptions="CenterAndExpand" Command="{Binding ClearCommand}"/>
+            <Label x:Name="info" Text="Здесь хранится история сканирований" FontSize="14" HorizontalTextAlignment="Center" Margin="40,0" HorizontalOptions="Center"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

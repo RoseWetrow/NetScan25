@@ -10,24 +10,36 @@
       в ScrollView внутри StackLayout с именем "list".
     -->
     <StackLayout>
-        <!--Область заголовка и списка обнаруженных устройств-->
-        <StackLayout Margin="20" VerticalOptions="StartAndExpand" Orientation="Vertical">
-            <!--Подсеть, которая сканируется-->
-            <Label x:Name="title" FontSize="15" />
-            <!--Прокручиваемая область для фреймов устройств-->
-            <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <StackLayout x:Name="list" />
-            </ScrollView>
+        <StackLayout Margin="30,20,30,30" VerticalOptions="StartAndExpand" Orientation="Vertical">                                                   <!-- Область заголовка и списка обнаруженных устройств -->
+            <Label x:Name="title" FontSize="15" Margin="0,0,0,8" Text="{Binding SubnetText}" />                                                              <!-- Сканируемая подсеть -->
+            <ActivityIndicator IsRunning="{Binding IsBusy}"  IsVisible="{Binding IsBusy}" Margin="0,0,0,8" Color="#09f"/>                                                 <!-- Индикатор занятости -->
+            <CollectionView ItemsSource="{Binding Devices}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" SelectionMode="None">    <!-- Прокручиваемая область для фреймов устройств -->
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="12" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="6" Padding="10" CornerRadius="8" BorderColor="#E0E0E0" HorizontalOptions="Center" WidthRequest="350">
+                            <StackLayout Orientation="Horizontal" Spacing="12">
+                                <BoxView WidthRequest="18" HeightRequest="18" CornerRadius="9" Color="Green" VerticalOptions="Center"/>   <!-- индикатор доступности устройства -->
+                                <StackLayout Orientation="Vertical">                                                                        <!-- вертикальная секция с hostname и ip -->
+                                    <Label Text="{Binding Hostname}" FontAttributes="Bold" FontSize="14"/>
+                                    <Label Text="{Binding Ip}" FontSize="14"/>
+                                    <Label Text="{Binding ScanTime}" FontSize="Micro"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
-        <!--Область кнопок и информационного текста-->
+
         <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand" Margin="0,0,0,30">
-            <!--StackLayout для размещения кнопок; создаём кнопку
-                сохранения динамически в коде-->
-            <StackLayout x:Name="buttons" Orientation="Horizontal" HorizontalOptions="Center" Spacing="50">
-                <Button x:Name="scan" Text="Сканировать" Padding="25,15" CornerRadius="50" Clicked="Button_Scan"/>
+            <StackLayout x:Name="buttons" Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
+                <Button Text="Сканировать" Padding="25,15" CornerRadius="50" Command="{Binding ScanCommand}" />
+                <Button Text="Отменить" Padding="25,15" CornerRadius="50" Command="{Binding CancelCommand}" IsVisible="{Binding IsBusy}" />
+                <Button Text="Сохранить" Padding="25,15" CornerRadius="50" Command="{Binding SaveCommand}" IsVisible="{Binding ShowSave}" />
             </StackLayout>
-            <!--Сообщение пользователю перед сканированием-->
-            <Label x:Name="info" Text="Перед сканированием убедитесь, что у вас есть подключение к сети!" FontSize="14" HorizontalTextAlignment="Center" Margin="40,0" HorizontalOptions="Center"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>
