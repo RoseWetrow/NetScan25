@@ -16,7 +16,7 @@ namespace NetScan.Services
 
         public DatabaseService()
         {
-            // Создаёт файл netscan.db3 в папке Personal, если его ещё нет.
+            // Создаёт файл netscan.db3 в папке Personal, если его ещё нет
             dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "netscan.db3");
             CreateTable();
         }
@@ -47,18 +47,10 @@ namespace NetScan.Services
                 connection.RunInTransaction(() =>
                 {
                     foreach (var d in devices)
-                    {
-                        // создаём таблицу, если её нет
-                        connection.CreateTable<Device>();
-
+                    {   // создаём таблицу, если её нет
+                        connection.CreateTable<Device>(); 
                         // создаём устройство для записи, проставляем время сканирования
-                        var deviceToInsert = new Device
-                        {
-                            Hostname = d.Hostname,
-                            Ip = d.Ip,
-                            ScanTime = DateTime.Now
-                        };
-
+                        var deviceToInsert = new Device{Hostname = d.Hostname, Ip = d.Ip, ScanTime = DateTime.Now}; 
                         connection.Insert(deviceToInsert);
                     }
                 });

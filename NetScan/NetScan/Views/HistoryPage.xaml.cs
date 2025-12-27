@@ -10,9 +10,7 @@ using NetScan.ViewModels;
 
 namespace NetScan.Views
 {
-    /// Страница истории выводит данные, сохранённые в SQLite-базе, и
-    /// предоставляет возможность очистить историю. История обновляется
-    /// автоматически при каждом открытии страницы.
+    /// Страница истории выводит данные, сохранённые в SQLite-базе, и предоставляет возможность очистить историю. 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HistoryPage : ContentPage
     {
@@ -21,15 +19,13 @@ namespace NetScan.Views
             InitializeComponent();
 
             var db = new DatabaseService();
-            BindingContext = new HistoryViewModel(db);
+            BindingContext = new HistoryViewModel(db);  // история обновляется при каждом открытии страницы
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             // ViewModel сам загружает историю в конструкторе/RefreshCommand.
-            // Если нужно — можно явно вызвать привязанный RefreshCommand:
-            // ((HistoryViewModel)BindingContext)?.RefreshCommand?.Execute(null);
         }
     }
 }

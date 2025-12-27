@@ -29,8 +29,7 @@ namespace NetScan.ViewModels
             MessagingCenter.Subscribe<ScanViewModel>(this, "DevicesSaved", (sender) => {Load();});
         }
 
-        /// Запрашивает список устройств из базы данных. Порядок сортировки –
-        /// по убыванию идентификатора, чтобы новые записи отображались первыми.
+        /// Запрашивает список устройств из базы данных (сортировка по убыванию Id)
         private void Load()
         {
             History.Clear();
@@ -39,7 +38,7 @@ namespace NetScan.ViewModels
                 History.Add(d);
         }
 
-        /// Обработчик кнопки «Очистить». Вызывает метод для удаления всех записей и обновляет список.
+        /// Обработчик кнопки Очистить, вызывает метод для удаления всех записей и обновляет список.
         private void Clear()
         {
             db.DeleteAllDevices();

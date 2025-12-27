@@ -9,7 +9,7 @@ using NetScan.Models;
 
 namespace NetScan.Services
 {
-    /// Простая реализация INetworkScanner
+    /// Реализация INetworkScanner
     /// Логика:
     /// - Получение подсети (GetLocalSubnet вынесено в ViewModel, чтобы избежать зависимости View в сервисе)
     /// - Асинхронно перебирает адреса в подсети, сначала выполняет Ping, только при успехе пытается сделать DNS-разрешение.
@@ -18,7 +18,7 @@ namespace NetScan.Services
 
     public class NetworkScannerService : INetworkScanner
     {
-        /// Асинхронно перебирает все возможные адреса в указанной подсети (x.x.x.1–254), сначала выполняет ping, при ответе — пытается разрешить имя через DNS. Сканирование прекращается при срабатывании CancellationToken.
+        /// Асинхронно перебирает возможные адреса в указанной подсети (x.x.x.1–254), сначала выполняет ping, при ответе — пытается разрешить имя через DNS. Прекращает сканирование при срабатывании CancellationToken.
         public async Task ScanSubnetAsync(string subnet, IProgress<Device> progress, CancellationToken ct, int maxConcurrency = 30)
         {
             var tasks = new List<Task>();
@@ -42,7 +42,6 @@ namespace NetScan.Services
                                 string hostname = "Unknown";
                                 try
                                 {
-                                    // пытаемся получить hostname, но ошибки игнорируем
                                     var entry = await Dns.GetHostEntryAsync(ip);
                                     if (!string.IsNullOrWhiteSpace(entry.HostName) && entry.HostName != ip)
                                         hostname = entry.HostName;
@@ -52,10 +51,8 @@ namespace NetScan.Services
                                     // игнорируем DNS-ошибки
                                 }
 
-                                var device = new Device{Hostname = hostname, Ip = ip, ScanTime = DateTime.Now};
-
-                                // Отправляем найденное устройство через progress (ViewModel добавит в коллекцию/отобразит)
-                                progress?.Report(device);
+                                var device = new Device{Hostname = hostname, Ip = ip, ScanTime = DateTime.Now}; // добавление найденных параметров устройства в экземпляр модели
+                                progress?.Report(device);                                                       // отправляем через progress (ViewModel добавит в коллекцию - отобразит)
                             }
                         }
                     }
@@ -70,7 +67,6 @@ namespace NetScan.Services
                     }
                 }, ct));
             }
-
             await Task.WhenAll(tasks);
         }
     }

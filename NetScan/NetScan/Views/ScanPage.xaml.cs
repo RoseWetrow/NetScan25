@@ -26,7 +26,7 @@ namespace NetScan.Views
             var db = new DatabaseService();
             BindingContext = new ScanViewModel(scanner, db);
 
-            // Вся логика сканирования и работы с БД вынесена в ViewModel/Services
+            // Вся логика сканирования и работы с БД в ViewModel/Services
             // В code-behind остаётся только инициализация и минимальные UI-взаимодействия
         }
     }

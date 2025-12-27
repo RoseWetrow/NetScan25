@@ -3,11 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NetScan.Views.HistoryPage"
              Title="История">
-    <!--
-      Страница истории отображает список сохранённых устройств. Для вывода
-      используется ListView с нестандартной высотой строк. В конце страницы
-      расположена кнопка очистки истории и пояснительный текст.
-    -->
+    <!-- Страница истории отображает список сохранённых устройств. -->
     <StackLayout>
         <StackLayout Margin="20" HeightRequest="485" Orientation="Vertical">      <!-- Список элементов истории -->
             <ListView x:Name="listView" HasUnevenRows="True" ItemsSource="{Binding History}" SeparatorVisibility="Default" SelectionMode="None">

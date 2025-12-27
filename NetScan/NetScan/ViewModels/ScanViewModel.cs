@@ -20,10 +20,7 @@ namespace NetScan.ViewModels
         private readonly INetworkScanner scanner;
         private readonly IDatabaseService db;
         private CancellationTokenSource cts;
-
-        // Список обнаруженных устройств до момента сохранения
-        public ObservableCollection<Models.Device> Devices { get; } = new ObservableCollection<Models.Device>();
-
+        public ObservableCollection<Models.Device> Devices { get; } = new ObservableCollection<Models.Device>(); // при изменении (Add/Clear) поднимает событие CollectionChanged, на которое CollectionView подписан через Binding Devices и обновляет UI (реализует INotifyCollectionChanged)
         public ICommand ScanCommand { get; }
         public ICommand SaveCommand { get; }
         public ICommand CancelCommand { get; }
@@ -35,8 +32,8 @@ namespace NetScan.ViewModels
             set { subnetText = value; OnPropertyChanged(); }
         }
 
-        /// Показывать кнопку "Сохранить": когда не в состоянии IsBusy и есть элементы
-        public bool ShowSave => !IsBusy && Devices.Count > 0;
+        public bool ShowSave => !IsBusy;                      /// Показывать кнопку "Сохранить", когда не в состоянии IsBusy
+        public bool EnabledSave => Devices.Count > 0;         /// Отображать активной, когда есть элементы и неактивной, когда их нет (изначально)
 
         public ScanViewModel(INetworkScanner scannerService, IDatabaseService databaseService)
         {
@@ -71,36 +68,32 @@ namespace NetScan.ViewModels
         public async Task StartScanAsync()
         {
             Devices.Clear();
-            OnPropertyChanged(nameof(ShowSave)); // скрыть Save сразу
-            IsBusy = true;
+            IsBusy = true;                                // показать Отменить
+            OnPropertyChanged(nameof(ShowSave));          // скрыть Сохранить
+            OnPropertyChanged(nameof(EnabledSave));       // Сохранить неактивна
             cts = new CancellationTokenSource();
 
-            var subnet = GetLocalSubnet();
+            var subnet = GetLocalSubnet();                // определяем подсеть
             if (string.IsNullOrEmpty(subnet))
             {
                 IsBusy = false;
                 OnPropertyChanged(nameof(ShowSave));
-                await Application.Current.MainPage.DisplayAlert("Ошибка", "Не удалось определить локальную подсеть", "OK");
+                await Application.Current.MainPage.DisplayAlert("Ошибка", "Не удалось определить локальную подсеть.\nПроверьте подключение и повторите попытку.", "OK");
                 return;
             }
-
             SubnetText = $"Сканируемая сеть: {subnet}";
 
-            var progress = new Progress<Models.Device>(device =>
-            {
-                Devices.Add(device);
-                OnPropertyChanged(nameof(ShowSave));  // После добавления устройства обновляем ShowSave (хотя пока IsBusy=true)
-            });
-
+            var progress = new Progress<Models.Device>(device => {Devices.Add(device);});         // создаётся Progress<Device> с коллбеком, добавляющим найденное устройство device в список устройств Devices (подписка на делегата прогресса)
             try
             {
-                await scanner.ScanSubnetAsync(subnet, progress, cts.Token, maxConcurrency: 40);
+                await scanner.ScanSubnetAsync(subnet, progress, cts.Token, maxConcurrency: 30);   // передаем подсеть в сервис по сканированию на наличие устройств, при обнаружении вызывается progress.Report(device)
             }
             catch (OperationCanceledException) { /* отмена */ }
             finally
             {
                 IsBusy = false;
-                OnPropertyChanged(nameof(ShowSave));  // После окончания сканирования ShowSave может измениться
+                OnPropertyChanged(nameof(ShowSave));      // кнопки возвращаются в исходное состояние (показываем Сохранить, убираем Отменить)
+                OnPropertyChanged(nameof(EnabledSave));
             }
         }
 
@@ -110,16 +103,15 @@ namespace NetScan.ViewModels
 
             db.AddDevices(Devices.Select(d => new Models.Device{Hostname = d.Hostname, Ip = d.Ip, ScanTime = DateTime.Now}));
 
-            //Devices.Clear();
-            OnPropertyChanged(nameof(ShowSave)); // скрыть Save после сохранения
+            MessagingCenter.Send(this, "DevicesSaved");  // Уведомляем, что устройство(я) сохранены в БД. Подписчики (HistoryViewModel) обновят свой список.
 
-            // Уведомляем, что устройство(я) сохранены в БД. Подписчики (HistoryViewModel) обновят свой список.
-            MessagingCenter.Send(this, "DevicesSaved");
+            Devices.Clear();                             // Очищаем список устройств после сохранения, кнопка Сохранить становится неактивной
+            OnPropertyChanged(nameof(EnabledSave));
         }
 
         private void Cancel()
         {
-            cts?.Cancel();  // IsBusy будет снят в finally блока StartScanAsync, там мы вызовем OnPropertyChanged(ShowSave)
+            cts?.Cancel();                               // IsBusy будет снят в finally
         }
     }
 }
