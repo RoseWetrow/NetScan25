@@ -12,8 +12,6 @@ using NetScan.ViewModels;
 
 namespace NetScan.Views
 {
-    /// Страница сканирования локальной сети
-    /// (Комментарии из оригинала сохранены в ViewModel/Services)
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanPage : ContentPage
     {
@@ -25,9 +23,6 @@ namespace NetScan.Views
             var scanner = new NetworkScannerService();
             var db = new DatabaseService();
             BindingContext = new ScanViewModel(scanner, db);
-
-            // Вся логика сканирования и работы с БД в ViewModel/Services
-            // В code-behind остаётся только инициализация и минимальные UI-взаимодействия
         }
     }
 }

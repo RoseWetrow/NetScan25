@@ -9,13 +9,6 @@ using NetScan.Models;
 
 namespace NetScan.Services
 {
-    /// Реализация INetworkScanner
-    /// Логика:
-    /// - Получение подсети (GetLocalSubnet вынесено в ViewModel, чтобы избежать зависимости View в сервисе)
-    /// - Асинхронно перебирает адреса в подсети, сначала выполняет Ping, только при успехе пытается сделать DNS-разрешение.
-    /// - Ограничивает параллелизм через SemaphoreSlim.
-    /// Комментарии и подходы основаны на оригинальном ScanPage.
-
     public class NetworkScannerService : INetworkScanner
     {
         /// Асинхронно перебирает возможные адреса в указанной подсети (x.x.x.1–254), сначала выполняет ping, при ответе — пытается разрешить имя через DNS. Прекращает сканирование при срабатывании CancellationToken.
@@ -71,3 +64,4 @@ namespace NetScan.Services
         }
     }
 }
+

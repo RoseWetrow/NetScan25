@@ -5,7 +5,6 @@ using SQLite;
 
 namespace NetScan.Models
 {
-    /// Класс модели данных для таблицы Device. Хранит идентификатор, название устройства, IP-адрес и время сканирования.
     public class Device
     {
         [PrimaryKey, AutoIncrement]
@@ -21,3 +20,4 @@ namespace NetScan.Models
         public DateTime ScanTime { get; set; }
     }
 }
+

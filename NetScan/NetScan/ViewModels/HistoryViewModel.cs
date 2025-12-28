@@ -53,3 +53,4 @@ namespace NetScan.ViewModels
         }
     }
 }
+

@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="NetScan.Views.ScanPage" Title="Сканирование">
 
     <StackLayout>
-        <StackLayout Margin="30,20,30,30" VerticalOptions="StartAndExpand" Orientation="Vertical">                                                   <!-- Область заголовка и списка обнаруженных устройств -->
-            <Label x:Name="title" FontSize="15" Margin="0,0,0,8" Text="{Binding SubnetText}"/>                                                              <!-- Сканируемая подсеть -->
-            <!--<ActivityIndicator IsRunning="{Binding IsBusy}"  IsVisible="{Binding IsBusy}" Margin="0,0,0,8" Color="#09f"/>                                                 --><!-- Индикатор занятости -->
+        <StackLayout Margin="30,20,30,30" VerticalOptions="StartAndExpand" Orientation="Vertical">                                                     <!-- Область заголовка и списка обнаруженных устройств -->
+            <Label x:Name="title" FontSize="15" Margin="0,0,0,8" Text="{Binding SubnetText}"/>                                                         <!-- Сканируемая подсеть -->
             <CollectionView ItemsSource="{Binding Devices}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" SelectionMode="None">    <!-- Прокручиваемая область для фреймов устройств -->
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
@@ -13,8 +12,8 @@
                     <DataTemplate>
                         <Frame Padding="10" CornerRadius="12" BorderColor="#E0E0E0" HorizontalOptions="Center" WidthRequest="350">
                             <StackLayout Orientation="Horizontal" Spacing="12">
-                                <BoxView WidthRequest="18" HeightRequest="18" CornerRadius="9" Color="Green" VerticalOptions="Center"/>   <!-- индикатор доступности устройства -->
-                                <StackLayout Orientation="Vertical">                                                                        <!-- вертикальная секция с hostname и ip -->
+                                <BoxView WidthRequest="18" HeightRequest="18" CornerRadius="9" Color="Green" VerticalOptions="Center"/>              <!-- индикатор доступности устройства -->
+                                <StackLayout Orientation="Vertical">                                                                                   <!-- вертикальная секция с hostname и ip -->
                                     <Label Text="{Binding Hostname}" FontAttributes="Bold" FontSize="14"/>
                                     <Label Text="{Binding Ip}" FontSize="14"/>
                                     <Label Text="{Binding ScanTime}" FontSize="Micro"/>
@@ -34,10 +33,12 @@
                 </Grid.ColumnDefinitions>
                 
                 <Button Grid.Column="0" Text="Сканировать" CornerRadius="50" Command="{Binding ScanCommand}" IsVisible="{Binding ShowSave}" WidthRequest="140" HeightRequest="90"/>
-                <ActivityIndicator Grid.Column="0" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#09f" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="140"/>
+                <ActivityIndicator Grid.Column="0" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#09f" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="140"/> <!-- Индикатор занятости -->
                 <Button Grid.Column="1" Text="Стоп" CornerRadius="50" Command="{Binding StopCommand}" IsVisible="{Binding IsBusy}" WidthRequest="140" HeightRequest="90"/>
                 <Button Grid.Column="1" Text="Сохранить" CornerRadius="50" Command="{Binding SaveCommand}" IsEnabled="{Binding EnabledSave}"  IsVisible="{Binding ShowSave}" WidthRequest="140" HeightRequest="90"/>
             </Grid>
         </StackLayout>
     </StackLayout>
 </ContentPage>
+
+    

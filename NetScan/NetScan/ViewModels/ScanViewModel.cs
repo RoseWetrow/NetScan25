@@ -20,7 +20,7 @@ namespace NetScan.ViewModels
         private readonly INetworkScanner scanner;
         private readonly IDatabaseService db;
         private CancellationTokenSource cts;
-        public ObservableCollection<Models.Device> Devices { get; } = new ObservableCollection<Models.Device>(); // при изменении (Add/Clear) поднимает событие CollectionChanged, на которое CollectionView подписан через Binding Devices и обновляет UI (реализует INotifyCollectionChanged)
+        public ObservableCollection<Models.Device> Devices { get; } = new ObservableCollection<Models.Device>();                                                                                                      // при изменении (Add/Clear) поднимает событие CollectionChanged, на которое CollectionView подписан через Binding Devices и обновляет UI (реализует INotifyCollectionChanged)
         public ICommand ScanCommand { get; }
         public ICommand SaveCommand { get; }
         public ICommand StopCommand { get; }
@@ -82,11 +82,11 @@ namespace NetScan.ViewModels
                 return;
             }
             SubnetText = $"Сканируемая сеть: {subnet}";
-
-            var progress = new Progress<Models.Device>(device => {Devices.Add(device);});         // создаётся Progress<Device> с коллбеком, добавляющим найденное устройство device в список устройств Devices (подписка на делегата прогресса)
+                // создаётся Progress<Device> с коллбеком, добавляющим найденное устройство device в список устройств Devices (подписка на делегата прогресса)
+            var progress = new Progress<Models.Device>(device => {Devices.Add(device);});         
             try
-            {
-                await scanner.ScanSubnetAsync(subnet, progress, cts.Token, maxConcurrency: 30);   // передаем подсеть в сервис по сканированию на наличие устройств, при обнаружении вызывается progress.Report(device)
+            {   // передаем подсеть в сервис по сканированию на наличие устройств, при обнаружении вызывается progress.Report(device)
+                await scanner.ScanSubnetAsync(subnet, progress, cts.Token, maxConcurrency: 30);   
             }
             catch (OperationCanceledException) { /* отмена */ }
             finally

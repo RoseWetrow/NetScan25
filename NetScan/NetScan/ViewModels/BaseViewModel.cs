@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 
 namespace NetScan.ViewModels
 {
-    /// Базовая ViewModel с реализацией INotifyPropertyChanged (ScanViewModel и HistoryViewModel наследуют её)
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         private bool isBusy;
@@ -25,3 +24,5 @@ namespace NetScan.ViewModels
         }
     }
 }
+
+

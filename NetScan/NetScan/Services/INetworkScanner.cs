@@ -14,3 +14,4 @@ namespace NetScan.Services
         Task ScanSubnetAsync(string subnet, IProgress<Device> progress, CancellationToken ct, int maxConcurrency = 30);
     }
 }
+
